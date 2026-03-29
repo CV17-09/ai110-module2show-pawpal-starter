@@ -82,6 +82,10 @@ PawPal+ includes several intelligent scheduling features:
 - **Plan Explanation**  
   Provides a clear explanation of why tasks were selected.
 
+  ## 🧩 System Architecture (UML)
+
+![UML Diagram](uml_final.png)
+
   ## 📸 Demo
 
 ![PawPal App](pawpal_demo.png)
