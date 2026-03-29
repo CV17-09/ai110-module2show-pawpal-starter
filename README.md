@@ -84,8 +84,8 @@ PawPal+ includes several intelligent scheduling features:
 
   ## 🧩 System Architecture (UML)
 
-![UML Diagram](uml_final.png)
+![UML Diagram](images/uml_final.png)
 
   ## 📸 Demo
 
-![PawPal App](pawpal_demo.png)
+![PawPal App](images/pawpal_demo.png)
