@@ -1,46 +1,51 @@
+from datetime import datetime
 from pawpal_system import Owner, Pet, Task, Scheduler
 
 
-def main():
-    # Create owner
-    owner = Owner(name="Claudia", available_time=60)  # 60 minutes
+def print_tasks(title: str, tasks: list[Task]) -> None:
+    print(f"\n{title}\n")
+    if not tasks:
+        print("No tasks found.")
+        return
 
-    # Create pets
+    for i, task in enumerate(tasks, start=1):
+        print(f"{i}. {task.display_task()}")
+
+
+def main():
+    owner = Owner(name="Claudia", available_time=60)
+
     dog = Pet(name="Buddy", species="Dog", age=3)
     cat = Pet(name="Milo", species="Cat", age=2)
 
-    # Add pets to owner
     owner.add_pet(dog)
     owner.add_pet(cat)
 
-    # Create tasks
-    task1 = Task(description="Morning Walk", time_required=30, frequency="Daily", priority=5)
-    task2 = Task(description="Feed Dog", time_required=10, frequency="Daily", priority=5)
-    task3 = Task(description="Play with Cat", time_required=20, frequency="Daily", priority=3)
+    today = datetime.now()
 
-    # Assign tasks to pets
-    dog.add_task(task1)
-    dog.add_task(task2)
-    cat.add_task(task3)
+    dog.add_task(Task("Morning Walk", 30, "Daily", today, "09:00", priority=5))
+    dog.add_task(Task("Feed Dog", 10, "Daily", today, "08:00", priority=5))
+    dog.add_task(Task("Brush Fur", 15, "Weekly", today, "11:00", priority=2))
 
-    # Create scheduler
+    cat.add_task(Task("Play with Cat", 20, "Daily", today, "09:00", priority=3))
+    cat.add_task(Task("Clean Litter Box", 15, "Daily", today, "10:00", priority=4))
+    cat.add_task(Task("Give Treat", 5, "Once", today, "12:00", completed=True, priority=1))
+
     scheduler = Scheduler(owner)
 
-    # Generate plan
-    plan = scheduler.generate_plan()
+    print_tasks("🐾 All Tasks", scheduler.retrieve_all_tasks())
+    print_tasks("📅 Today's Schedule", scheduler.generate_plan())
 
-    # Print schedule
-    print("\n🐾 Today's Schedule:\n")
+    print("\n🧠 Explanation\n")
+    print(scheduler.explain_plan(scheduler.generate_plan()))
 
-    if not plan:
-        print("No tasks fit within the available time.")
+    print("\n⚠ Conflict Warnings\n")
+    warnings = scheduler.detect_schedule_conflicts()
+    if warnings:
+        for warning in warnings:
+            print(warning)
     else:
-        for i, task in enumerate(plan, start=1):
-            print(f"{i}. {task.display_task()}")
-
-    # Print explanation
-    print("\n🧠 Explanation:\n")
-    print(scheduler.explain_plan(plan))
+        print("No scheduling conflicts detected.")
 
 
 if __name__ == "__main__":
