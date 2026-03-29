@@ -53,3 +53,37 @@ The PawPal+ scheduler includes several intelligent features to improve pet care 
 - **Time Constraints**: The scheduler ensures that selected tasks fit within the owner's available time.
 
 These features make the system more realistic and useful for managing daily pet care responsibilities.
+
+## 🚀 Features
+
+PawPal+ includes several intelligent scheduling features:
+
+- **Priority-Based Scheduling**  
+  Automatically selects the most important tasks first (e.g., feeding, medication).
+
+- **Sorting by Time or Priority**  
+  Tasks can be organized by shortest duration or highest priority.
+
+- **Task Filtering**  
+  Filter tasks by:
+  - Pet name
+  - Completion status (Pending / Completed)
+  - Due date (Today only)
+
+- **Recurring Tasks**  
+  Daily and weekly tasks automatically generate a new instance after completion.
+
+- **Conflict Detection**  
+  Detects when multiple tasks are scheduled at the same time and displays warnings.
+
+- **Time Constraint Handling**  
+  Ensures the total scheduled tasks fit within the owner's available time.
+
+- **Plan Explanation**  
+  Provides a clear explanation of why tasks were selected.
+
+  ## 📸 Demo
+
+<a href="/course_images/ai110/pawpal_demo.png" target="_blank">
+  <img src='/course_images/ai110/pawpal_demo.png' title='PawPal App' alt='PawPal App' class='center-block' />
+</a>

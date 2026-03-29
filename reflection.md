@@ -34,11 +34,39 @@ This tradeoff is reasonable because it keeps the logic simple and easy to unders
 
 **a. How you used AI**
 
-I used AI tools to brainstorm system design ideas, structure my classes, and refine my scheduling logic. AI also helped with debugging, adding features like recurring tasks and conflict detection, and improving code readability. The most helpful prompts were specific questions about how to implement features step by step or how to structure class interactions.
+I used VS Code Copilot throughout the project to support different stages of development, including system design, code generation, debugging, and refactoring. The most effective features were:
+
+- **Inline Chat / Agent Mode** for generating class skeletons and implementing methods step by step.
+- **Code suggestions** for quickly writing repetitive logic such as filtering, sorting, and task handling.
+- **Targeted prompts** (e.g., asking how the Scheduler should retrieve tasks from pets) which helped clarify system interactions.
+
+These tools helped speed up development while still allowing me to focus on the overall system design.
 
 **b. Judgment and verification**
 
-There were moments when I did not accept AI suggestions directly, especially when they introduced unnecessary complexity or reduced readability. Some suggestions were more “Pythonic” but harder to understand. I evaluated them by testing and checking if they improved clarity and functionality. If not, I chose simpler and more maintainable solutions.
+One example where I modified an AI suggestion was in the conflict detection logic. The AI initially suggested storing partial data (like task descriptions and metadata using dictionary access such as `__dict__`). I chose to simplify this by storing full task objects instead, which made the code cleaner, easier to read, and more maintainable.
+
+I evaluated AI suggestions by:
+- Testing them in my code
+- Checking if they matched project requirements
+- Deciding whether they improved readability and structure
+
+If a suggestion added unnecessary complexity, I simplified or rejected it.
+
+**c. Organization and workflow**
+
+Using separate chat sessions for different phases of the project helped me stay organized and focused. For example:
+- One session focused on system design and UML
+- Another focused on implementation
+- Another on testing and refinement
+
+This prevented confusion and made it easier to track decisions and progress without mixing unrelated ideas.
+
+**d. Key takeaway about AI collaboration**
+
+One important lesson I learned is that AI is a powerful assistant, but not a decision-maker. As the developer, I needed to act as the “lead architect” by making final decisions about system structure, tradeoffs, and code clarity.
+
+AI helped generate ideas and accelerate development, but it was my responsibility to ensure the system remained simple, logical, and aligned with the project goals. This balance between using AI and maintaining control over design was essential for building a clean and functional system.
 
 ---
 
