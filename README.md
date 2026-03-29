@@ -84,6 +84,4 @@ PawPal+ includes several intelligent scheduling features:
 
   ## 📸 Demo
 
-<a href="/course_images/ai110/pawpal_demo.png" target="_blank">
-  <img src='/course_images/ai110/pawpal_demo.png' title='PawPal App' alt='PawPal App' class='center-block' />
-</a>
+![PawPal App](pawpal_demo.png)
